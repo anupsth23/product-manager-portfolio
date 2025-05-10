@@ -1,0 +1,120 @@
+/* General Body Styles */
+body {
+    font-family: 'Lato', sans-serif; /* Using Lato from Google Fonts, fallback to sans-serif */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Very light grey background */
+    color: #333; /* Dark grey for text */
+}
+
+.container {
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header & Hero Section */
+#hero {
+    background-color: #2c3e50; /* Dark blue/grey for header */
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 700; /* Bolder for name */
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+#hero .tagline {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #bdc3c7; /* Lighter grey for tagline */
+}
+
+/* Section Styling */
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid #e0e0e0; /* Light separator line */
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section h2 {
+    font-size: 2em;
+    color: #3498db; /* Accent color (blue) for headings */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Experience Section */
+#experience .job {
+    margin-bottom: 30px;
+    background-color: #ffffff; /* White cards for jobs */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#experience .job h3 {
+    font-size: 1.5em;
+    color: #2c3e50; /* Darker heading for job title */
+    margin-bottom: 5px;
+}
+
+#experience .job .company-location {
+    font-size: 1em;
+    color: #7f8c8d; /* Grey for company/location/dates */
+    margin-bottom: 15px;
+}
+
+#experience ul {
+    list-style-type: disc; /* Standard bullets */
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+#experience ul li {
+    margin-bottom: 10px;
+    color: #555; /* Slightly lighter text for bullet points */
+}
+
+/* Footer & Contact Section */
+#contact {
+    background-color: #34495e; /* Slightly lighter dark blue/grey for footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+#contact h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #ecf0f1; /* Light color for links in footer */
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Link to Google Fonts - to be added in HTML head */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap'); */ 
