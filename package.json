@@ -2,7 +2,7 @@
   "name": "product-manager-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anupshrestha.github.io/product-manager-portfolio",
+  "homepage": "https://anupsth23.github.io/product-manager-portfolio",
   "dependencies": {
     "@types/node": "^16.18.46",
     "@types/react": "^18.2.21",

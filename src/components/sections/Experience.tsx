@@ -6,7 +6,6 @@ import Container from '../ui/Container';
 import Heading from '../ui/Heading';
 import Timeline from '../ui/Timeline';
 import KpiMetric from '../ui/KpiMetric';
-import CodeBlock from '../ui/CodeBlock';
 import { theme } from '../../styles/theme';
 
 interface ExperienceProps {

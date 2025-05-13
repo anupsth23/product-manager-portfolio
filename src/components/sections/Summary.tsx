@@ -138,25 +138,6 @@ const PointText = styled.p`
   margin: 0;
 `;
 
-const HighlightedText = styled.span`
-  color: ${theme.colors.text};
-  font-weight: ${theme.typography.fontWeights.medium};
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: ${theme.colors.aiGlow};
-    opacity: 0.5;
-    z-index: -1;
-    border-radius: ${theme.borderRadius.sm};
-  }
-`;
-
 const IconElement = styled.div`
   position: absolute;
   z-index: 0;
