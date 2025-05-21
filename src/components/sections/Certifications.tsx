@@ -36,14 +36,20 @@ const CertificationsWrapper = styled(Section)`
 const CertificationsContainer = styled(Container)`
   position: relative;
   z-index: 1;
+  max-width: 1400px;
+  padding-left: 24px;
+  padding-right: 24px;
 `;
 
 const CertificationsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: ${theme.spacing.xl};
   margin-top: ${theme.spacing.xl};
   
+  @media (max-width: ${theme.breakpoints.md}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   @media (max-width: ${theme.breakpoints.sm}) {
     grid-template-columns: 1fr;
   }
@@ -51,25 +57,21 @@ const CertificationsGrid = styled.div`
 
 const CertificationCard = styled.div`
   background: ${theme.colors.glass};
-  border-radius: ${theme.borderRadius.lg};
-  padding: ${theme.spacing.lg};
-  backdrop-filter: blur(10px);
-  border: 1px solid ${theme.colors.glassBorder};
-  transition: all ${theme.transitions.normal};
+  border-radius: ${theme.borderRadius.xl};
+  padding: 2.5rem 2rem;
+  backdrop-filter: blur(14px);
+  border: 1.5px solid ${theme.colors.glassBorder};
+  transition: box-shadow 0.2s, transform 0.2s;
   position: relative;
   overflow: hidden;
-  
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    
-    &::after {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    border-color: ${theme.colors.primary};
   }
-  
-  /* Accent line at bottom */
+
   &::after {
     content: '';
     position: absolute;

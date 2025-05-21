@@ -23,7 +23,7 @@ export interface Project {
   role: string;
   impact: string;
   technologies: string[];
-  image: string;
+  image?: string;
   video?: string;
   link?: string;
 }
@@ -64,6 +64,37 @@ export interface PersonalInfo {
   philosophy?: string;
 }
 
+export interface Education {
+  degree: string;
+  field: string;
+  institution: string;
+  location: string;
+  period: string;
+  description: string;
+}
+
+export interface Award {
+  title: string;
+  date: string;
+  description: string;
+}
+
+export interface VolunteerExperience {
+  role: string;
+  organization: string;
+  location: string;
+  period: string;
+  description: string;
+}
+
+export interface TechnicalSkills {
+  productManagement: string[];
+  tools: string[];
+  programming: string[];
+  cloudPlatforms: string[];
+  data: string[];
+}
+
 export interface PortfolioData {
   personalInfo: PersonalInfo;
   summary: string;
@@ -73,4 +104,9 @@ export interface PortfolioData {
   testimonials?: Testimonial[];
   certifications?: Certification[];
   vision?: string; // Future-focused statement
+  education?: Education[];
+  awards?: Award[];
+  competencies?: string[];
+  technicalSkills?: TechnicalSkills;
+  volunteerExperience?: VolunteerExperience[];
 } 

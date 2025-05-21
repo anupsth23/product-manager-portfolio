@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { theme } from '../../styles/theme';
 
 interface TimelineItemProps {
-  year: string;
+  period: string;
   title: string;
   company: string;
   location: string;
@@ -151,7 +151,7 @@ const TimelineItemContainer = styled.div<{isActive: boolean; index: number}>`
   }
 `;
 
-const YearTag = styled.span<{isActive: boolean}>`
+const PeriodTag = styled.span<{isActive: boolean}>`
   font-family: 'Fira Code', monospace;
   font-size: ${theme.typography.sizes.caption};
   color: ${props => props.isActive ? theme.colors.primary : theme.colors.textSecondary};
@@ -222,7 +222,7 @@ const Location = styled.span<{isActive: boolean}>`
 `;
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ 
-  year, 
+  period, 
   title, 
   company, 
   location, 
@@ -238,7 +238,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       role="button"
       aria-pressed={isActive}
     >
-      <YearTag isActive={isActive}>{year}</YearTag>
+      <PeriodTag isActive={isActive}>{period}</PeriodTag>
       <JobTitle isActive={isActive}>
         {title}
       </JobTitle>
@@ -254,7 +254,7 @@ const Timeline: React.FC<TimelineProps> = ({ items, activeIndex, setActiveIndex 
       {items.map((item, index) => (
         <TimelineItem
           key={index}
-          year={item.period.split(' - ')[0]} // Just take the start year
+          period={item.period}
           title={item.title}
           company={item.company}
           location={item.location}

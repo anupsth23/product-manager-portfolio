@@ -7,7 +7,7 @@ export const portfolioData: PortfolioData = {
     tagline: "Transforming business visions into digital realities through human-centered design and data intelligence.",
     email: "anupsth23@gmail.com",
     location: "Toronto, Ontario",
-    profileImage: "/images/image.profile.jpeg",
+    profileImage: "/images/profile.jpg",
     socialLinks: {
       linkedin: "https://linkedin.com/in/anup-shrestha",
       twitter: "https://twitter.com/anupshrestha",
@@ -21,52 +21,103 @@ export const portfolioData: PortfolioData = {
     {
       title: "Product Manager",
       company: "TwinsAI",
-      location: "USA",
+      location: "USA (Remote)",
       period: "Jan 2025 - Present",
       responsibilities: [
-        "Architect the product vision and strategy, translating business objectives into actionable roadmaps",
-        "Lead cross-functional collaboration across engineering, design, marketing, and sales divisions",
-        "Analyze market trends and customer feedback to identify high-impact opportunity areas"
+        "Led cross-functional teams across engineering, design, sales, and marketing to deliver secure, scalable, and compliant SaaS solutions in 3+ global markets",
+        "Developed and maintained the product roadmap, aligning cross-functional teams on priorities and ensuring timely delivery of high-impact features",
+        "Owned end-to-end product strategy and execution for AI-driven platforms, resulting in measurable improvements in product adoption and customer retention",
+        "Drove onboarding and flow optimizations, leveraging analytics to increase user conversion by 22%",
+        "Led sprint planning and Agile ceremonies, driving continuous improvement and fostering a culture of accountability and collaboration",
+        "Facilitated Agile ceremonies (sprint planning, stand-ups, retrospectives) and managed product roadmaps, user stories, and KPIs using Jira, GitHub, and Google Suite"
       ],
       kpis: [
-        "Developed 4 innovative AI products from concept to market launch",
-        "Managed 20+ cross-functional team members across 3 departments",
-        "Handled 25+ key stakeholders including C-suite executives and investors"
+        "Led 3+ global market expansions",
+        "Increased user conversion by 22%",
+        "Managed cross-functional teams across 8 departments"
       ],
       achievements: [
-        "Spearheaded the development of an AI-powered sales automation platform that reduced outreach time by 40% and improved conversion rates by 400%",
-        "Established a customer advisory board that contributed to a 35% increase in feature adoption and a 28% reduction in churn",
-        "Pioneered a data-driven experimentation framework resulting in a 65% improvement in product decision confidence",
-        "Led strategic partnerships with 5 enterprise clients, generating $2.5M in annual recurring revenue",
-        "Orchestrated product launch campaigns that achieved 150% of user acquisition targets within first quarter"
+        "Led cross-functional teams across engineering, design, sales, and marketing to deliver secure, scalable, and compliant SaaS solutions in 3+ global markets",
+        "Developed and maintained the product roadmap, aligning cross-functional teams on priorities and ensuring timely delivery of high-impact features",
+        "Owned end-to-end product strategy and execution for AI-driven platforms, resulting in measurable improvements in product adoption and customer retention",
+        "Drove onboarding and flow optimizations, leveraging analytics to increase user conversion by 22%",
+        "Led sprint planning and Agile ceremonies, driving continuous improvement and fostering a culture of accountability and collaboration"
       ],
-      technologies: ["Machine Learning", "NLP", "Product Analytics", "UX Research", "Agile/Scrum"],
-      image: "/images/twins-ai.png"
+      technologies: ["Jira", "GitHub", "Google Suite", "Agile/Scrum", "SaaS"],
+      image: "/images/experience/twinsailogo.svg"
     },
     {
-      title: "Product Manager",
+      title: "Head of Product Operations (Fractional)",
+      company: "Pandaflow",
+      location: "USA (Remote)",
+      period: "Jan 2024 - Present",
+      responsibilities: [
+        "Coordinated timelines and resource allocation for automation projects, improving project delivery speed by 15% across 3+ internal teams",
+        "Monitored project milestones and deliverables, reducing project risks by 20% through proactive tracking and stakeholder communication",
+        "Drafted 10+ key project documents, improving stakeholder communication efficiency by 30%"
+      ],
+      kpis: [
+        "Improved project delivery speed by 15%",
+        "Reduced project risks by 20%",
+        "Improved stakeholder communication efficiency by 30%"
+      ],
+      achievements: [
+        "Coordinated timelines and resource allocation for automation projects, improving project delivery speed by 15% across 3+ internal teams",
+        "Monitored project milestones and deliverables, reducing project risks by 20% through proactive tracking and stakeholder communication",
+        "Drafted 10+ key project documents, improving stakeholder communication efficiency by 30%"
+      ],
+      technologies: ["Project Management", "Automation", "Stakeholder Management", "Documentation"],
+      image: "/images/experience/pandaflowlogo.png"
+    },
+    {
+      title: "Advanced AI Data Trainer",
+      company: "Invisible Technologies",
+      location: "USA",
+      period: "Jan 2023 - Apr 2023",
+      responsibilities: [
+        "Trained advanced AI language models, providing detailed conversational examples and feedback, resulting in measurable improvements in model accuracy and safety",
+        "Labeled and categorized AI-generated outputs, developing processes that improved data quality by 18% and annotation efficiency by 12%",
+        "Performed quality assurance on annotated datasets, contributing to a 15% reduction in data errors for production AI systems"
+      ],
+      kpis: [
+        "Improved data quality by 18%",
+        "Increased annotation efficiency by 12%"
+      ],
+      achievements: [
+        "Trained advanced AI language models, providing detailed conversational examples and feedback, resulting in measurable improvements in model accuracy and safety",
+        "Labeled and categorized AI-generated outputs, developing processes that improved data quality by 18% and annotation efficiency by 12%",
+        "Performed quality assurance on annotated datasets, contributing to a 15% reduction in data errors for production AI systems"
+      ],
+      technologies: ["AI/ML", "Data Annotation", "Quality Assurance", "Natural Language Processing"],
+      image: "/images/experience/invisiblelogo.png"
+    },
+    {
+      title: "Project Manager",
       company: "Rumsan Associates",
       location: "Nepal",
       period: "December 2021 - March 2023",
       responsibilities: [
-        "Orchestrated the full product lifecycle for 16 SaaS applications from concept to post-launch optimization",
-        "Developed comprehensive product strategies aligned with client business objectives and market opportunities",
-        "Facilitated seamless collaboration between stakeholders, development teams, and end-users"
+        "Delivered 10+ SaaS and blockchain projects, including retail crypto trading platforms and NFT marketplaces, ensuring 100% regulatory compliance and secure launches",
+        "Designed and launched a blockchain-based financial product, securing 4+ government partnerships and onboarding 15,000+ users within the first year",
+        "Conducted market research and user acceptance testing, reducing post-release bugs by 20% and improving customer satisfaction scores by 17%",
+        "Owned the full product lifecycle for B2B2C offerings, from requirements gathering and API design to partner onboarding and support",
+        "Managed the GitHub Wiki as a central knowledge hub and created comprehensive 'how-to' guides and onboarding materials, empowering clients and customers to maximize product value and reducing support inquiries by 18%"
       ],
       kpis: [
-        "Developed 3 NFT marketplaces with combined monthly volume of $1.2M",
-        "Supervised 15 engineers across 6 concurrent blockchain projects",
-        "Coordinated with 18 government and enterprise stakeholders"
+        "Delivered 10+ SaaS and blockchain projects",
+        "Secured 4+ government partnerships",
+        "Onboarded 15,000+ users",
+        "Mentored +12 people to become project managers"
       ],
       achievements: [
-        "Conceptualized and launched a revolutionary blockchain-based financial platform that secured partnerships with 4 government agencies and acquired 15,000+ users in its first quarter",
-        "Implemented an innovative product development framework that reduced time-to-market by 30% while maintaining quality standards",
-        "Created a customer feedback loop that directly influenced product evolution, resulting in a 92% satisfaction score",
-        "Built and delivered 3 enterprise-grade NFT marketplaces with a combined monthly trading volume of $1.2M",
-        "Instituted agile methodologies across the engineering department, increasing overall productivity by 42%"
+        "Delivered 10+ SaaS and blockchain projects, including retail crypto trading platforms and NFT marketplaces, ensuring 100% regulatory compliance and secure launches",
+        "Designed and launched a blockchain-based financial product, securing 4+ government partnerships and onboarding 15,000+ users within the first year",
+        "Conducted market research and user acceptance testing, reducing post-release bugs by 20% and improving customer satisfaction scores by 17%",
+        "Owned the full product lifecycle for B2B2C offerings, from requirements gathering and API design to partner onboarding and support",
+        "Managed the GitHub Wiki as a central knowledge hub and created comprehensive 'how-to' guides and onboarding materials, empowering clients and customers to maximize product value and reducing support inquiries by 18%"
       ],
-      technologies: ["Blockchain", "Web Applications", "Financial Technology", "OAuth", "RESTful APIs"],
-      image: "/images/rumsan.png"
+      technologies: ["Blockchain", "SaaS", "GitHub", "API Design", "B2B2C"],
+      image: "/images/experience/rumsanlogo.png"
     },
     {
       title: "Business Analyst",
@@ -74,24 +125,27 @@ export const portfolioData: PortfolioData = {
       location: "Nepal",
       period: "November 2018 - November 2021",
       responsibilities: [
-        "Translated complex business requirements into detailed technical specifications for development teams",
-        "Conducted comprehensive market research to identify emerging trends and competitor movements",
-        "Served as the crucial link between technical teams and business stakeholders"
+        "Designed wireframes and prototypes (Figma) for 8+ web and mobile applications, accelerating development cycles by 20% and reducing client feedback loops",
+        "Acted as a bridge between business and technical teams, ensuring alignment on product vision, compliance, and growth strategy",
+        "Authored BRDs, SRS, and user stories for 10+ projects, reducing development timelines by 10%",
+        "Utilized A/B testing and analytics to improve onboarding by 25% and reduce churn by 25%",
+        "Supported the development of digital asset solutions for disaster relief, designing token-based workflows for transparent, secure aid distribution"
       ],
       kpis: [
-        "Analyzed data from 12+ products serving 30,000+ monthly active users",
-        "Collaborated with 10 development teams across different business units",
-        "Managed 22 stakeholder relationships spanning 4 different industries"
+        "Designed 8+ web and mobile applications",
+        "Reduced development timelines by 10%",
+        "Reduced churn by 25%",
+        "#1 award for UNCDF"
       ],
       achievements: [
-        "Identified critical UX bottlenecks through data analysis, leading to a redesign that reduced churn by 25% and increased user engagement by 40%",
-        "Developed a strategic product positioning framework that aligned engineering efforts with business growth objectives",
-        "Implemented an efficient requirements gathering process that reduced development rework by 35%",
-        "Spearheaded the creation of a company-wide data analysis toolkit that improved decision-making speed by 65%",
-        "Orchestrated the consolidation of 5 legacy systems, resulting in $180K annual operational cost savings"
+        "Designed wireframes and prototypes (Figma) for 8+ web and mobile applications, accelerating development cycles by 20% and reducing client feedback loops",
+        "Acted as a bridge between business and technical teams, ensuring alignment on product vision, compliance, and growth strategy",
+        "Authored BRDs, SRS, and user stories for 10+ projects, reducing development timelines by 10%",
+        "Utilized A/B testing and analytics to improve onboarding by 25% and reduce churn by 25%",
+        "Supported the development of digital asset solutions for disaster relief, designing token-based workflows for transparent, secure aid distribution"
       ],
-      technologies: ["Data Analysis", "Business Process Modeling", "SQL", "Wireframing", "User Stories"],
-      image: "/images/business-analyst.png"
+      technologies: ["Figma", "A/B Testing", "Analytics", "BRD/SRS", "User Stories"],
+      image: "/images/experience/business-analyst.svg"
     }
   ],
   skills: [
@@ -110,28 +164,28 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
-      title: "Quantum",
+      title: "TwinsAI",
       description: "An AI-powered sales engagement platform that revolutionizes how sales teams connect with prospects through intelligent automation.",
       role: "Led product strategy, development and go-to-market execution",
       impact: "Increased customer conversion by 400% and reduced sales cycle by 35% for enterprise clients",
       technologies: ["Artificial Intelligence", "Natural Language Processing", "Sales Automation", "CRM Integration"],
-      image: "/images/quantum-project.png"
+      image: "/images/projects/twinsai.svg"
     },
     {
-      title: "RahatChain",
+      title: "Rahat",
       description: "Blockchain-based humanitarian aid distribution platform enabling transparent, efficient delivery of resources to disaster-affected communities.",
       role: "Defined product vision, managed development roadmap, and coordinated with government stakeholders",
       impact: "Successfully distributed aid to 15,000+ beneficiaries and reduced distribution costs by 42%",
       technologies: ["Blockchain", "Digital Wallets", "Offline Authentication", "Humanitarian Tech"],
-      image: "/images/rahat-project.png"
+      image: "/images/projects/rahat.png"
     },
     {
-      title: "MarketPulse",
-      description: "Real-time market intelligence platform providing actionable insights through advanced data visualization and predictive analytics.",
-      role: "Conceptualized the product, prioritized features, and guided the analytics implementation",
-      impact: "Enabled clients to identify market opportunities 60% faster, leading to measurable revenue growth",
-      technologies: ["Big Data", "Predictive Analytics", "Interactive Visualizations", "API Integrations"],
-      image: "/images/marketpulse-project.png"
+      title: "AgriClear",
+      description: "Blockchain implemented on the supply chain of agro products tracked inside Nepal and shipping internationally.",
+      role: "Collaborated with more than 20 vendors and led the technical implementation.",
+      impact: "Won #1 for UNCDF 2019 for innovation in supply chain transparency and efficiency.",
+      technologies: ["Blockchain", "Supply Chain", "AgriTech", "International Shipping"],
+      image: "/images/projects/artswap.png"
     }
   ],
   testimonials: [
@@ -140,54 +194,136 @@ export const portfolioData: PortfolioData = {
       author: "Sarah Chen",
       role: "CTO",
       company: "TwinsAI",
-      image: "/images/testimonial1.png"
+      image: "/images/testimonials/testimonial1.svg"
     },
     {
       quote: "Working with Anup transformed how we approach product development. His data-driven methodology and customer-first mindset created a paradigm shift in our organization.",
       author: "Rajiv Sharma",
       role: "CEO",
       company: "Rumsan Associates",
-      image: "/images/testimonial2.png"
+      image: "/images/testimonials/testimonial2.svg"
     },
     {
       quote: "Anup's ability to translate complex technical concepts into business value is unparalleled. He bridges the gap between innovation and practical application masterfully.",
       author: "Emily Johnson",
       role: "VP of Innovation",
       company: "Global Financial Services",
-      image: "/images/testimonial3.png"
+      image: "/images/testimonials/testimonial3.svg"
     }
   ],
   certifications: [
     {
-      name: "Microsoft Certified Professional (MCP)",
-      issuer: "Microsoft",
-      date: "Jun 2020",
-      validUntil: "Jun 2023",
-      credentialId: "MS-1234567",
-      credentialUrl: "https://www.microsoft.com/certification/verify",
-      description: "Validated expertise in implementing, managing, and maintaining Microsoft technologies, demonstrating proficiency in Microsoft's core platforms and solutions.",
-      skills: ["Microsoft Azure", "Cloud Services", "Windows Server", "Microsoft 365"],
-      image: "/images/certifications/microsoft.png"
-    },
-    {
-      name: "Certified Scrum Product Owner (CSPO)",
-      issuer: "Scrum Alliance",
-      date: "Sep 2021",
-      credentialId: "SA-12345678",
-      credentialUrl: "https://certification.scrumalliance.org/verify",
-      description: "Certification in product ownership practices focusing on value maximization, stakeholder management, and agile product development.",
-      skills: ["Product Backlog Management", "Stakeholder Collaboration", "Agile Methodologies", "Value Delivery"],
-      image: "/images/certifications/scrum-alliance.png"
+      name: "Data Analytics Essentials",
+      issuer: "Cisco",
+      date: "2024",
+      description: "Comprehensive training in data analytics fundamentals and practical applications.",
+      skills: ["Data Analysis", "Data Visualization", "Business Intelligence"],
+      image: "/images/certifications/cisco.svg"
     },
     {
       name: "Google Data Analytics Professional Certificate",
       issuer: "Google",
-      date: "Mar 2022",
-      credentialId: "GDA-987654321",
-      credentialUrl: "https://www.coursera.org/account/accomplishments/verify/",
+      date: "2023",
       description: "Comprehensive training in data analytics including data preparation, analysis, visualization, and interpretation for business decision-making.",
       skills: ["Data Analysis", "R Programming", "SQL", "Tableau", "Data Visualization"],
-      image: "/images/certifications/google.png"
+      image: "/images/certifications/google.svg"
+    },
+    {
+      name: "Google Project Management Professional Certificate",
+      issuer: "Google",
+      date: "2022",
+      description: "Professional certification in project management methodologies and tools.",
+      skills: ["Project Management", "Agile", "Scrum", "Risk Management"],
+      image: "/images/certifications/google.svg"
+    },
+    {
+      name: "Programming for Everybody (Python)",
+      issuer: "University of Michigan",
+      date: "2020",
+      description: "Comprehensive introduction to Python programming and computational thinking.",
+      skills: ["Python", "Programming Fundamentals", "Problem Solving"],
+      image: "/images/certifications/michigan.svg"
+    },
+    {
+      name: "Investment Management Specialization",
+      issuer: "University of Geneva",
+      date: "2020",
+      description: "Specialized training in investment strategies and portfolio management.",
+      skills: ["Investment Analysis", "Portfolio Management", "Financial Markets"],
+      image: "/images/certifications/geneva.svg"
+    },
+    {
+      name: "Introduction to Psychology",
+      issuer: "Yale University",
+      date: "2020",
+      description: "Foundational course in psychological principles and human behavior.",
+      skills: ["Psychology", "Human Behavior", "Research Methods"],
+      image: "/images/certifications/yale.svg"
+    }
+  ],
+  education: [
+    {
+      degree: "Post Graduate Certificate",
+      field: "Advanced Project Management – Information Technology",
+      institution: "Lambton College",
+      location: "Toronto, Canada",
+      period: "2023 - 2024",
+      description: "Advanced studies in project management methodologies and information technology integration."
+    },
+    {
+      degree: "Bachelor of Information & Management",
+      field: "Information & Management",
+      institution: "Thames International College, Tribhuvan University",
+      location: "Nepal",
+      period: "2014 - 2018",
+      description: "Comprehensive study of information systems and management principles."
+    }
+  ],
+  awards: [
+    {
+      title: "Microsoft Twilio Hackathon",
+      date: "2024",
+      description: "Participated in the Microsoft Twilio Hackathon, showcasing innovative solutions in cloud communications."
+    },
+    {
+      title: "UNCDF 2019",
+      date: "2019",
+      description: "Winner of funding for product innovation and MVP delivery, demonstrating excellence in product development and innovation."
+    }
+  ],
+  competencies: [
+    "Product Strategy & Roadmapping",
+    "API Product Design & Developer Experience",
+    "Agile & Scrum Leadership",
+    "Cross-Functional Team Leadership",
+    "Regulatory & Compliance Management",
+    "Data Analytics & A/B Testing (PostHog, Power BI)",
+    "User Onboarding & Growth Optimization",
+    "SaaS & Blockchain Product Delivery",
+    "Stakeholder & Partner Management",
+    "UX/UI Collaboration (Figma, Miro)"
+  ],
+  technicalSkills: {
+    productManagement: ["Agile", "Scrum", "MVP Development", "Product Roadmapping"],
+    tools: ["Jira", "Confluence", "Figma", "Miro", "Notion", "Git", "Postman", "Power BI", "Excel", "Tableau", "Google Suite", "Slack"],
+    programming: ["Python", "SQL", "R (basic)"],
+    cloudPlatforms: ["AWS", "Unix/Linux", "Blockchain (Ethereum, Matic, BNB)"],
+    data: ["Data Visualization", "Data Analytics", "A/B Testing", "Machine Learning", "AI/LLM"]
+  },
+  volunteerExperience: [
+    {
+      role: "Blood Donation Event Volunteer",
+      organization: "Hamro LifeBank",
+      location: "Nepal",
+      period: "2019 - 2023",
+      description: "Coordinated logistics for 12 events, collecting 400+ units of blood and potentially saving 90+ lives."
+    },
+    {
+      role: "General Member",
+      organization: "Rotaract Club of Thames International College",
+      location: "Nepal",
+      period: "2016 - 2021",
+      description: "Led volunteer efforts and charity drives, including blanket and clothing collections for underserved communities."
     }
   ]
 }; 

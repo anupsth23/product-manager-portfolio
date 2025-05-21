@@ -6,6 +6,7 @@ import Container from '../ui/Container';
 import Heading from '../ui/Heading';
 import Timeline from '../ui/Timeline';
 import KpiMetric from '../ui/KpiMetric';
+import Image from '../ui/Image';
 import { theme } from '../../styles/theme';
 
 interface ExperienceProps {
@@ -271,6 +272,26 @@ const Technology = styled.span`
   }
 `;
 
+const CompanyImage = styled(Image)`
+  width: 100%;
+  height: 200px;
+  border-radius: ${theme.borderRadius.md};
+  overflow: hidden;
+  margin-bottom: ${theme.spacing.md};
+  object-fit: cover;
+  background: rgba(20, 25, 35, 0.6);
+  border: 1px solid rgba(74, 157, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25),
+                0 0 15px rgba(74, 157, 255, 0.2);
+    border-color: rgba(74, 157, 255, 0.4);
+  }
+`;
+
 // Harvard-style achievements format
 const formatAchievementForHarvard = (achievement: string) => {
   const lowerAchievement = achievement.toLowerCase();
@@ -300,7 +321,7 @@ const formatAchievementForHarvard = (achievement: string) => {
   return formattedAchievement;
 };
 
-const Experience: React.FC<ExperienceProps> = ({ experience }: ExperienceProps) => {
+const Experience: React.FC<ExperienceProps> = ({ experience }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedJob, setSelectedJob] = useState<WorkExperience>(experience[0]);
   
@@ -316,7 +337,7 @@ const Experience: React.FC<ExperienceProps> = ({ experience }: ExperienceProps) 
     const kpiData = job.kpis.map((kpi, index) => {
       // Extract numbers from the KPI text
       const numberMatch = kpi.match(/\d+(\+|\s)?/);
-      const value = numberMatch ? numberMatch[0] : '';
+      const value = numberMatch ? numberMatch[0].toString() : '';
       
       // Determine icon and label based on KPI content
       let icon = 'chart';
@@ -389,6 +410,8 @@ const Experience: React.FC<ExperienceProps> = ({ experience }: ExperienceProps) 
                 <JobPeriod>{selectedJob.period}</JobPeriod>
               </JobDetails>
             </JobHeader>
+            
+            {/* Removed company image placeholder */}
             
             {selectedJob.kpis && selectedJob.kpis.length > 0 && (
               <>
