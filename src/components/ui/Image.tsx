@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
 interface ImageProps {
-  src: string;
+  src?: string;
   alt: string;
   width?: string;
   height?: string;
@@ -41,7 +41,7 @@ const StyledImage = styled.img<{ width?: string; height?: string }>`
 const Image: React.FC<ImageProps> = ({ src, alt, width, height, className }) => {
   const [error, setError] = useState(false);
 
-  if (error) {
+  if (!src || error) {
     return (
       <ImageWrapper width={width} height={height} className={className}>
         {alt}

@@ -185,6 +185,13 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }: HeroProps) => {
       .toUpperCase();
   };
 
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <HeroWrapper id="hero" fullHeight noMargin>
       <GridBackground />
@@ -217,10 +224,21 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }: HeroProps) => {
         </HeroTagline>
         
         <HeroActions>
-          <Button size="large" hasGlow>
+          <Button size="large" hasGlow onClick={scrollToProjects}>
             View Projects
           </Button>
-          <Button size="large" variant="outline">
+          <Button 
+            size="large" 
+            variant="outline" 
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/resume.pdf';
+              link.download = 'Anup_Shrestha_Resume.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+          >
             Download Resume
           </Button>
         </HeroActions>
