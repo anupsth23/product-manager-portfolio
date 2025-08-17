@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/product-manager-portfolio/static/js/main.ff777e88.js",
+    "main.js": "/product-manager-portfolio/static/js/main.a56c420c.js",
     "index.html": "/product-manager-portfolio/index.html",
-    "main.ff777e88.js.map": "/product-manager-portfolio/static/js/main.ff777e88.js.map"
+    "main.a56c420c.js.map": "/product-manager-portfolio/static/js/main.a56c420c.js.map"
   },
   "entrypoints": [
-    "static/js/main.ff777e88.js"
+    "static/js/main.a56c420c.js"
   ]
 }
