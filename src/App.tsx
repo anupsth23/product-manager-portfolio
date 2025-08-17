@@ -8,6 +8,7 @@ import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Volunteer from './components/sections/Volunteer';
 import Certifications from './components/sections/Certifications';
+import SocialMedia from './components/sections/SocialMedia';
 import { portfolioData } from './data/portfolioData';
 
 const App: React.FC = () => {
@@ -30,6 +31,10 @@ const App: React.FC = () => {
       <Projects projects={portfolioData.projects || []} />
       <Volunteer volunteerExperience={portfolioData.volunteerExperience || []} />
       <Certifications certifications={portfolioData.certifications || []} />
+      <SocialMedia 
+        linkedin={portfolioData.personalInfo.socialLinks?.linkedin}
+        twitter={portfolioData.personalInfo.socialLinks?.twitter}
+      />
       {/* Add other sections here as they are developed */}
     </ThemeProvider>
   );

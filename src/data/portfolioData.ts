@@ -7,10 +7,10 @@ export const portfolioData: PortfolioData = {
     tagline: "Transforming business visions into digital realities through human-centered design and data intelligence.",
     email: "anupsth23@gmail.com",
     location: "Toronto, Ontario",
-    profileImage: "/images/profile.jpg",
+    profileImage: "https://media.licdn.com/dms/image/v2/D5603AQFrGlxJs-QKCA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723231275036?e=1758153600&v=beta&t=k6j420hAhqihZ6n2h6bwF6TY45ovE0QEXdwr2r-hbgY",
     socialLinks: {
-      linkedin: "https://linkedin.com/in/anup-shrestha",
-      twitter: "https://twitter.com/anupshrestha",
+      linkedin: "https://www.linkedin.com/in/anupsth23/",
+      twitter: "https://x.com/anupsth23",
       medium: "https://medium.com/@anupshrestha"
     },
     philosophy: "I believe in using technology as a catalyst for meaningful change, focusing on products that solve real human problems while driving business growth. My approach combines analytical precision with creative empathy."
@@ -301,14 +301,15 @@ export const portfolioData: PortfolioData = {
     "User Onboarding & Growth Optimization",
     "SaaS & Blockchain Product Delivery",
     "Stakeholder & Partner Management",
-    "UX/UI Collaboration (Figma, Miro)"
+    "UX/UI Collaboration (Figma, Miro)",
+    "AI/LLM Product Strategy & Implementation"
   ],
   technicalSkills: {
     productManagement: ["Agile", "Scrum", "MVP Development", "Product Roadmapping"],
     tools: ["Jira", "Confluence", "Figma", "Miro", "Notion", "Git", "Postman", "Power BI", "Excel", "Tableau", "Google Suite", "Slack"],
     programming: ["Python", "SQL", "R (basic)"],
     cloudPlatforms: ["AWS", "Unix/Linux", "Blockchain (Ethereum, Matic, BNB)"],
-    data: ["Data Visualization", "Data Analytics", "A/B Testing", "Machine Learning", "AI/LLM"]
+    data: ["Data Visualization", "Data Analytics", "A/B Testing", "Machine Learning", "AI/LLM", "AI Product Strategy", "LLM Integration", "Prompt Engineering"]
   },
   volunteerExperience: [
     {
