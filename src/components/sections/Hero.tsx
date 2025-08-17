@@ -232,8 +232,8 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }: HeroProps) => {
             variant="outline" 
             onClick={() => {
               const link = document.createElement('a');
-              link.href = '/resume.pdf';
-              link.download = 'Anup_Shrestha_Resume.pdf';
+              link.href = '/resume.html';
+              link.target = '_blank';
               document.body.appendChild(link);
               link.click();
               document.body.removeChild(link);
