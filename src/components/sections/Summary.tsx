@@ -40,13 +40,13 @@ const SummaryWrapper = styled(Section)`
 `;
 
 const SummaryContainer = styled(Container)`
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 `;
 
 const SummaryCard = styled.div`
   position: relative;
-  padding: ${theme.spacing.xxl};
+  padding: ${theme.spacing.xl};
   background: ${theme.colors.aiSurface};
   border-radius: ${theme.borderRadius.xl};
   border: 1px solid ${theme.colors.glassBorder};
@@ -88,96 +88,41 @@ const SummaryCard = styled.div`
   }
 `;
 
-const MainHeader = styled.div`
-  text-align: center;
-  margin-bottom: ${theme.spacing.xl};
-  position: relative;
-`;
-
-const MainTitle = styled.div`
+const CardHeader = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: ${theme.spacing.md};
-  margin-bottom: ${theme.spacing.md};
+  margin-bottom: ${theme.spacing.lg};
 `;
 
 const IconWrapper = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: ${theme.borderRadius.lg};
   background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.aiAccent});
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
-  box-shadow: 0 6px 20px rgba(74, 157, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(74, 157, 255, 0.3);
   animation: ${float} 4s ease-in-out infinite;
 `;
 
-const ContentGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: ${theme.spacing.xl};
-  
-  @media (min-width: ${theme.breakpoints.lg}) {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+const HeaderContent = styled.div`
+  flex: 1;
 `;
 
-const ContentSection = styled.div`
+const CardContent = styled.div`
   position: relative;
-  padding: ${theme.spacing.lg};
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: ${theme.borderRadius.lg};
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(74, 157, 255, 0.2);
-    transform: translateY(-2px);
-  }
-`;
-
-const SectionHeader = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${theme.spacing.sm};
-  margin-bottom: ${theme.spacing.md};
-`;
-
-const SectionIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: ${theme.borderRadius.md};
-  background: linear-gradient(135deg, ${theme.colors.aiAccent}, ${theme.colors.primary});
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: white;
-  box-shadow: 0 4px 12px rgba(161, 112, 246, 0.3);
-`;
-
-const SectionTitle = styled.h3`
-  font-size: ${theme.typography.sizes.title3};
-  font-weight: ${theme.typography.fontWeights.semibold};
-  color: ${theme.colors.text};
-  margin: 0;
-  background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.aiAccent});
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  z-index: 1;
 `;
 
 const SummaryText = styled.p`
   font-size: 1.1rem;
   line-height: 1.8;
   color: ${theme.colors.textSecondary};
-  margin: 0;
+  margin: 0 0 ${theme.spacing.lg} 0;
   font-weight: 400;
   
   @media (min-width: ${theme.breakpoints.md}) {
@@ -185,10 +130,21 @@ const SummaryText = styled.p`
   }
 `;
 
-const VisionText = styled(SummaryText)`
-  font-style: italic;
+const VisionText = styled.p`
+  font-size: 1rem;
+  line-height: 1.7;
   color: ${theme.colors.text};
+  margin: 0;
   font-weight: 500;
+  font-style: italic;
+  padding: ${theme.spacing.md};
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: ${theme.borderRadius.md};
+  border-left: 3px solid ${theme.colors.primary};
+  
+  @media (min-width: ${theme.breakpoints.md}) {
+    font-size: 1.05rem;
+  }
 `;
 
 const DecorativeElement = styled.div`
@@ -224,39 +180,24 @@ const Summary: React.FC<SummaryProps> = ({ summary, vision }: SummaryProps) => {
     <SummaryWrapper id="summary" aiPattern>
       <SummaryContainer>
         <SummaryCard>
-          <MainHeader>
-            <MainTitle>
-              <IconWrapper>🌟</IconWrapper>
+          <CardHeader>
+            <IconWrapper>💼</IconWrapper>
+            <HeaderContent>
               <Heading 
                 level={2} 
-                size="title1" 
+                size="title2" 
                 marginBottom="none" 
                 gradient
               >
                 About Me
               </Heading>
-            </MainTitle>
-          </MainHeader>
+            </HeaderContent>
+          </CardHeader>
           
-          <ContentGrid>
-            <ContentSection>
-              <SectionHeader>
-                <SectionIcon>💡</SectionIcon>
-                <SectionTitle>Professional Summary</SectionTitle>
-              </SectionHeader>
-              <SummaryText>{summary}</SummaryText>
-            </ContentSection>
-            
-            {vision && (
-              <ContentSection>
-                <SectionHeader>
-                  <SectionIcon>🚀</SectionIcon>
-                  <SectionTitle>My Vision</SectionTitle>
-                </SectionHeader>
-                <VisionText>{vision}</VisionText>
-              </ContentSection>
-            )}
-          </ContentGrid>
+          <CardContent>
+            <SummaryText>{summary}</SummaryText>
+            {vision && <VisionText>{vision}</VisionText>}
+          </CardContent>
           
           <DecorativeElement className="dot-1" />
           <DecorativeElement className="dot-2" />

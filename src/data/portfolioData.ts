@@ -15,8 +15,8 @@ export const portfolioData: PortfolioData = {
     },
     philosophy: "I believe in using technology as a catalyst for meaningful change, focusing on products that solve real human problems while driving business growth. My approach combines analytical precision with creative empathy."
   },
-  summary: "Visionary Product Leader with a proven ability to transform abstract concepts into market-ready innovations. I specialize in orchestrating the delicate balance between business objectives, technical possibilities, and human needs. My data-first methodology and customer-centric focus have consistently delivered products that not only meet market demands but shape future user expectations. With expertise spanning from zero-to-one product creation to strategic scaling, I thrive in fast-paced environments where creativity meets execution excellence.",
-  vision: "I envision a future where product development transcends traditional boundaries, creating digital experiences that feel intuitively human while leveraging the full potential of emerging technologies. My goal is to lead teams that build the invisible infrastructure powering tomorrow's most essential innovations.",
+  summary: "Product Manager with 3+ years of experience delivering high-impact SaaS and AI solutions across global markets. I bring a unique blend of technical expertise, strategic thinking, and cross-functional leadership that drives measurable business outcomes. My proven track record includes increasing user conversion by 22%, leading 3+ global market expansions, and managing teams across 8 departments. I excel at translating complex business requirements into scalable product solutions while fostering collaborative environments that maximize team performance.",
+  vision: "I'm passionate about building products that solve real human problems while driving sustainable business growth. My approach combines data-driven decision making with empathetic user research to create solutions that users love and businesses value.",
   experience: [
     {
       title: "Product Manager",
