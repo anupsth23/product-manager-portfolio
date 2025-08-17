@@ -147,7 +147,7 @@ const SummaryText = styled.p`
 
 const VisionText = styled(SummaryText)`
   font-style: italic;
-  color: ${theme.colors.textPrimary};
+  color: ${theme.colors.text};
   font-weight: 500;
 `;
 
