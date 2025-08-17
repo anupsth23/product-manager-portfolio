@@ -40,19 +40,13 @@ const SummaryWrapper = styled(Section)`
 `;
 
 const SummaryContainer = styled(Container)`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: ${theme.spacing.xl};
-  
-  @media (min-width: ${theme.breakpoints.lg}) {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+  max-width: 900px;
+  margin: 0 auto;
 `;
 
 const SummaryCard = styled.div`
   position: relative;
-  padding: ${theme.spacing.xl};
+  padding: ${theme.spacing.xxl};
   background: ${theme.colors.aiSurface};
   border-radius: ${theme.borderRadius.xl};
   border: 1px solid ${theme.colors.glassBorder};
@@ -94,43 +88,89 @@ const SummaryCard = styled.div`
   }
 `;
 
-const VisionCard = styled(SummaryCard)`
-  background: linear-gradient(135deg, ${theme.colors.aiSurface}, rgba(74, 157, 255, 0.05));
-  
-  &::before {
-    background: linear-gradient(90deg, ${theme.colors.aiAccent}, ${theme.colors.primary});
-  }
+const MainHeader = styled.div`
+  text-align: center;
+  margin-bottom: ${theme.spacing.xl};
+  position: relative;
 `;
 
-const CardHeader = styled.div`
-  margin-bottom: ${theme.spacing.lg};
-  position: relative;
+const MainTitle = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: ${theme.spacing.md};
+  margin-bottom: ${theme.spacing.md};
 `;
 
 const IconWrapper = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: ${theme.borderRadius.lg};
   background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.aiAccent});
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: white;
-  box-shadow: 0 4px 15px rgba(74, 157, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(74, 157, 255, 0.3);
   animation: ${float} 4s ease-in-out infinite;
 `;
 
-const HeaderContent = styled.div`
-  flex: 1;
+const ContentGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: ${theme.spacing.xl};
+  
+  @media (min-width: ${theme.breakpoints.lg}) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
 `;
 
-const CardContent = styled.div`
+const ContentSection = styled.div`
   position: relative;
-  z-index: 1;
+  padding: ${theme.spacing.lg};
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: ${theme.borderRadius.lg};
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(74, 157, 255, 0.2);
+    transform: translateY(-2px);
+  }
+`;
+
+const SectionHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing.sm};
+  margin-bottom: ${theme.spacing.md};
+`;
+
+const SectionIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: ${theme.borderRadius.md};
+  background: linear-gradient(135deg, ${theme.colors.aiAccent}, ${theme.colors.primary});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: 0 4px 12px rgba(161, 112, 246, 0.3);
+`;
+
+const SectionTitle = styled.h3`
+  font-size: ${theme.typography.sizes.title3};
+  font-weight: ${theme.typography.fontWeights.semibold};
+  color: ${theme.colors.text};
+  margin: 0;
+  background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.aiAccent});
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 `;
 
 const SummaryText = styled.p`
@@ -184,50 +224,44 @@ const Summary: React.FC<SummaryProps> = ({ summary, vision }: SummaryProps) => {
     <SummaryWrapper id="summary" aiPattern>
       <SummaryContainer>
         <SummaryCard>
-          <CardHeader>
-            <IconWrapper>💡</IconWrapper>
-            <HeaderContent>
+          <MainHeader>
+            <MainTitle>
+              <IconWrapper>🌟</IconWrapper>
               <Heading 
                 level={2} 
-                size="title2" 
+                size="title1" 
                 marginBottom="none" 
                 gradient
               >
                 About Me
               </Heading>
-            </HeaderContent>
-          </CardHeader>
-          <CardContent>
-            <SummaryText>{summary}</SummaryText>
-          </CardContent>
+            </MainTitle>
+          </MainHeader>
+          
+          <ContentGrid>
+            <ContentSection>
+              <SectionHeader>
+                <SectionIcon>💡</SectionIcon>
+                <SectionTitle>Professional Summary</SectionTitle>
+              </SectionHeader>
+              <SummaryText>{summary}</SummaryText>
+            </ContentSection>
+            
+            {vision && (
+              <ContentSection>
+                <SectionHeader>
+                  <SectionIcon>🚀</SectionIcon>
+                  <SectionTitle>My Vision</SectionTitle>
+                </SectionHeader>
+                <VisionText>{vision}</VisionText>
+              </ContentSection>
+            )}
+          </ContentGrid>
+          
           <DecorativeElement className="dot-1" />
           <DecorativeElement className="dot-2" />
           <DecorativeElement className="dot-3" />
         </SummaryCard>
-        
-        {vision && (
-          <VisionCard>
-            <CardHeader>
-              <IconWrapper>🚀</IconWrapper>
-              <HeaderContent>
-                <Heading 
-                  level={2} 
-                  size="title2" 
-                  marginBottom="none" 
-                  gradient
-                >
-                  My Vision
-                </Heading>
-              </HeaderContent>
-            </CardHeader>
-            <CardContent>
-              <VisionText>{vision}</VisionText>
-            </CardContent>
-            <DecorativeElement className="dot-1" />
-            <DecorativeElement className="dot-2" />
-            <DecorativeElement className="dot-3" />
-          </VisionCard>
-        )}
       </SummaryContainer>
     </SummaryWrapper>
   );
