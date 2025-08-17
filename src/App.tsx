@@ -5,6 +5,7 @@ import Summary from './components/sections/Summary';
 import Experience from './components/sections/Experience';
 import Education from './components/sections/Education';
 import Skills from './components/sections/Skills';
+import ProductManagerSkills from './components/sections/ProductManagerSkills';
 import Projects from './components/sections/Projects';
 import Volunteer from './components/sections/Volunteer';
 import Certifications from './components/sections/Certifications';
@@ -18,6 +19,16 @@ const App: React.FC = () => {
       <Summary summary={portfolioData.summary} vision={portfolioData.vision} />
       <Experience experience={portfolioData.experience} />
       <Education education={portfolioData.education || []} />
+      <ProductManagerSkills 
+        technicalSkills={portfolioData.technicalSkills || {
+          productManagement: [],
+          tools: [],
+          programming: [],
+          cloudPlatforms: [],
+          data: []
+        }} 
+        competencies={portfolioData.competencies || []} 
+      />
       <Skills 
         technicalSkills={portfolioData.technicalSkills || {
           productManagement: [],
