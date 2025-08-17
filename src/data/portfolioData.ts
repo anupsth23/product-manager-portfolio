@@ -177,7 +177,7 @@ export const portfolioData: PortfolioData = {
       role: "Defined product vision, managed development roadmap, and coordinated with government stakeholders",
       impact: "Successfully distributed aid to 15,000+ beneficiaries and reduced distribution costs by 42%",
       technologies: ["Blockchain", "Digital Wallets", "Offline Authentication", "Humanitarian Tech"],
-      image: "/images/projects/rahat.png"
+      image: "https://assets.rumsan.net/rumsan-group/rumsan-footer-rahat.png"
     },
     {
       title: "AgriClear",
