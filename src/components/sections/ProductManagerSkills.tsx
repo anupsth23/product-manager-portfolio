@@ -15,25 +15,14 @@ interface ProductManagerSkillsProps {
 }
 
 // Animations
-const slideInLeft = keyframes`
+const slideInUp = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
-  }
-`;
-
-const slideInRight = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 `;
 
@@ -54,156 +43,47 @@ const SkillsWrapper = styled(Section)`
   background: linear-gradient(135deg, rgba(20, 25, 35, 0.95) 0%, rgba(30, 35, 45, 0.95) 100%);
 `;
 
-const MainCard = styled.div`
-  background: ${theme.colors.aiSurface};
-  border-radius: ${theme.borderRadius.xl};
-  border: 1px solid ${theme.colors.glassBorder};
-  backdrop-filter: blur(20px);
-  box-shadow: ${theme.shadows.aiGlow};
-  padding: ${theme.spacing.xxl};
-  position: relative;
-  overflow: hidden;
-  animation: ${slideInLeft} 0.8s ease-out;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, ${theme.colors.primary}, ${theme.colors.aiAccent}, ${theme.colors.primary});
-    animation: ${glow} 3s ease-in-out infinite;
-  }
-  
-  &:hover {
-    animation: ${pulse} 0.3s ease-in-out;
-  }
-`;
-
-const HeaderSection = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${theme.spacing.xl};
-  margin-bottom: ${theme.spacing.xxl};
-  flex-wrap: wrap;
-  
-  @media (max-width: ${theme.breakpoints.md}) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-const IconWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, ${theme.colors.primary}, ${theme.colors.aiAccent});
-  border-radius: 50%;
-  font-size: 2rem;
-  color: white;
-  box-shadow: 0 10px 30px rgba(74, 157, 255, 0.3);
-  flex-shrink: 0;
-`;
-
-const HeaderContent = styled.div`
-  flex: 1;
-`;
-
-const Subtitle = styled.p`
-  color: ${theme.colors.textSecondary};
-  font-size: 1.1rem;
-  margin: 0;
-  margin-top: ${theme.spacing.md};
-  line-height: 1.6;
-`;
-
-const ContentGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: ${theme.spacing.xxl};
-  
-  @media (max-width: ${theme.breakpoints.lg}) {
-    grid-template-columns: 1fr;
-    gap: ${theme.spacing.xl};
-  }
-`;
-
-const SkillsSection = styled.div`
-  animation: ${slideInLeft} 0.8s ease-out 0.2s both;
-`;
-
-const CompetenciesSection = styled.div`
-  animation: ${slideInRight} 0.8s ease-out 0.4s both;
-`;
-
-const SectionTitle = styled.h3`
-  font-size: 1.4rem;
-  color: ${theme.colors.text};
-  margin-bottom: ${theme.spacing.lg};
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  
-  &::before {
-    content: '🎯';
-    margin-right: ${theme.spacing.md};
-    font-size: 1.3rem;
-  }
-`;
-
-const CompetenciesTitle = styled.h3`
-  font-size: 1.4rem;
-  color: ${theme.colors.text};
-  margin-bottom: ${theme.spacing.lg};
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  
-  &::before {
-    content: '⚡';
-    margin-right: ${theme.spacing.md};
-    font-size: 1.3rem;
-  }
+const SkillsContainer = styled(Container)`
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 const SkillsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: ${theme.spacing.lg};
+  margin-top: ${theme.spacing.xl};
 `;
 
-const SkillCategory = styled.div`
-  background: rgba(255, 255, 255, 0.05);
+const SkillsCard = styled.div`
+  background: rgba(20, 25, 35, 0.6);
+  backdrop-filter: blur(10px);
   border-radius: ${theme.borderRadius.lg};
   padding: ${theme.spacing.lg};
-  border: 1px solid rgba(74, 157, 255, 0.1);
+  border: 1px solid rgba(74, 157, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  min-height: 200px;
+  animation: ${slideInUp} 0.8s ease-out;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(74, 157, 255, 0.3);
     transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(74, 157, 255, 0.4);
   }
 `;
 
-const CategoryTitle = styled.h4`
-  font-size: 1.1rem;
+const CategoryTitle = styled.h3`
+  font-size: ${theme.typography.sizes.title3};
   color: ${theme.colors.text};
   margin-bottom: ${theme.spacing.md};
-  font-weight: 600;
   display: flex;
   align-items: center;
   
   &::before {
-    content: '•';
+    content: '//';
     color: ${theme.colors.primary};
     margin-right: ${theme.spacing.sm};
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-family: 'Fira Code', monospace;
   }
 `;
 
@@ -213,60 +93,66 @@ const SkillsList = styled.div`
   gap: ${theme.spacing.sm};
 `;
 
-const SkillTag = styled.span`
-  background: linear-gradient(135deg, rgba(74, 157, 255, 0.1), rgba(74, 157, 255, 0.2));
-  border: 1px solid rgba(74, 157, 255, 0.3);
-  padding: ${theme.spacing.xs} ${theme.spacing.md};
-  border-radius: ${theme.borderRadius.md};
-  font-size: 0.95rem;
+const Skill = styled.span`
+  background: rgba(74, 157, 255, 0.1);
+  border: 1px solid rgba(74, 157, 255, 0.2);
+  padding: ${theme.spacing.xs} ${theme.spacing.sm};
+  border-radius: ${theme.borderRadius.sm};
+  font-size: ${theme.typography.sizes.caption};
   color: ${theme.colors.textSecondary};
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
-  font-weight: 500;
   
   &:hover {
-    background: linear-gradient(135deg, rgba(74, 157, 255, 0.2), rgba(74, 157, 255, 0.3));
+    background: rgba(74, 157, 255, 0.2);
     color: ${theme.colors.text};
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(74, 157, 255, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  &::before {
+    content: '#';
+    color: ${theme.colors.primary};
+    margin-right: 4px;
   }
 `;
 
-const CompetenciesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: ${theme.spacing.md};
-`;
-
-const CompetencyItem = styled.div`
-  display: flex;
-  align-items: center;
-  padding: ${theme.spacing.md} ${theme.spacing.lg};
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: ${theme.borderRadius.md};
-  border: 1px solid rgba(74, 157, 255, 0.1);
+const CompetenciesCard = styled.div`
+  background: rgba(20, 25, 35, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: ${theme.borderRadius.lg};
+  padding: ${theme.spacing.lg};
+  border: 1px solid rgba(74, 157, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  margin-top: ${theme.spacing.xl};
   transition: all 0.3s ease;
-  min-height: 60px;
+  animation: ${slideInUp} 0.8s ease-out 0.2s both;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(74, 157, 255, 0.3);
-    transform: translateX(5px);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(74, 157, 255, 0.4);
   }
+`;
+
+const CompetenciesList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: ${theme.spacing.md};
+  margin-top: ${theme.spacing.lg};
+`;
+
+const Competency = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: ${theme.typography.sizes.body};
+  color: ${theme.colors.textSecondary};
   
   &::before {
     content: '→';
     color: ${theme.colors.primary};
-    margin-right: ${theme.spacing.md};
-    font-weight: bold;
-    font-size: 1.1rem;
+    margin-right: ${theme.spacing.sm};
   }
-`;
-
-const CompetencyText = styled.span`
-  color: ${theme.colors.textSecondary};
-  font-size: 1rem;
-  line-height: 1.5;
 `;
 
 const ProductManagerSkills: React.FC<ProductManagerSkillsProps> = ({ 
@@ -275,71 +161,76 @@ const ProductManagerSkills: React.FC<ProductManagerSkillsProps> = ({
 }) => {
   return (
     <SkillsWrapper id="product-manager-skills">
-      <Container>
-        <MainCard>
-          <HeaderSection>
-            <IconWrapper>🚀</IconWrapper>
-            <HeaderContent>
-              <Heading 
-                level={2} 
-                size="title1" 
-                gradient 
-                withAccent
-              >
-                Product Manager Skills & Competencies
-              </Heading>
-              <Subtitle>
-                Comprehensive skill set honed through years of product leadership and innovation
-              </Subtitle>
-            </HeaderContent>
-          </HeaderSection>
-
-          <ContentGrid>
-            <SkillsSection>
-              <SectionTitle>Technical Skills</SectionTitle>
-              <SkillsGrid>
-                <SkillCategory>
-                  <CategoryTitle>Product Strategy</CategoryTitle>
-                  <SkillsList>
-                    {technicalSkills.productManagement.map((skill, index) => (
-                      <SkillTag key={index}>{skill}</SkillTag>
-                    ))}
-                  </SkillsList>
-                </SkillCategory>
-
-                <SkillCategory>
-                  <CategoryTitle>Tools & Technologies</CategoryTitle>
-                  <SkillsList>
-                    {technicalSkills.tools.map((tool, index) => (
-                      <SkillTag key={index}>{tool}</SkillTag>
-                    ))}
-                  </SkillsList>
-                </SkillCategory>
-
-                <SkillCategory>
-                  <CategoryTitle>Data & Analytics</CategoryTitle>
-                  <SkillsList>
-                    {technicalSkills.data.map((skill, index) => (
-                      <SkillTag key={index}>{skill}</SkillTag>
-                    ))}
-                  </SkillsList>
-                </SkillCategory>
-              </SkillsGrid>
-            </SkillsSection>
-
-            <CompetenciesSection>
-              <CompetenciesTitle>Core Competencies</CompetenciesTitle>
-              <CompetenciesGrid>
-                {competencies.map((competency, index) => (
-                  <CompetencyItem key={index}>
-                    <CompetencyText>{competency}</CompetencyText>
-                  </CompetencyItem>
-                ))}
-              </CompetenciesGrid>
-            </CompetenciesSection>
-          </ContentGrid>
-        </MainCard>
-      </Container>
+      <SkillsContainer>
+        <Heading level={2} size="title1" gradient withAccent>
+          Skills & Competencies
+        </Heading>
+        
+        <SkillsGrid>
+          <SkillsCard>
+            <CategoryTitle>Product Management</CategoryTitle>
+            <SkillsList>
+              {technicalSkills.productManagement.map((skill, index) => (
+                <Skill key={index}>{skill}</Skill>
+              ))}
+            </SkillsList>
+          </SkillsCard>
+          
+          <SkillsCard>
+            <CategoryTitle>Tools & Technologies</CategoryTitle>
+            <SkillsList>
+              {technicalSkills.tools.map((tool, index) => (
+                <Skill key={index}>{tool}</Skill>
+              ))}
+            </SkillsList>
+          </SkillsCard>
+          
+          <SkillsCard>
+            <CategoryTitle>Programming</CategoryTitle>
+            <SkillsList>
+              {['Python', 'SQL', 'R (basic)'].map((skill, index) => (
+                <Skill key={index}>{skill}</Skill>
+              ))}
+            </SkillsList>
+          </SkillsCard>
+          
+          <SkillsCard>
+            <CategoryTitle>Cloud & Platforms</CategoryTitle>
+            <SkillsList>
+              {['AWS', 'Unix/Linux', 'Blockchain (Ethereum, Matic, BNB)'].map((skill, index) => (
+                <Skill key={index}>{skill}</Skill>
+              ))}
+            </SkillsList>
+          </SkillsCard>
+          
+          <SkillsCard>
+            <CategoryTitle>Data & Analytics</CategoryTitle>
+            <SkillsList>
+              {technicalSkills.data.map((skill, index) => (
+                <Skill key={index}>{skill}</Skill>
+              ))}
+            </SkillsList>
+          </SkillsCard>
+          
+          <SkillsCard>
+            <CategoryTitle>AI & Machine Learning</CategoryTitle>
+            <SkillsList>
+              {['AI/LLM', 'AI Product Strategy', 'LLM Integration', 'Prompt Engineering', 'Machine Learning'].map((skill, index) => (
+                <Skill key={index}>{skill}</Skill>
+              ))}
+            </SkillsList>
+          </SkillsCard>
+        </SkillsGrid>
+        
+        <CompetenciesCard>
+          <CategoryTitle>Core Competencies</CategoryTitle>
+          <CompetenciesList>
+            {competencies.map((competency, index) => (
+              <Competency key={index}>{competency}</Competency>
+            ))}
+          </CompetenciesList>
+        </CompetenciesCard>
+      </SkillsContainer>
     </SkillsWrapper>
   );
 };

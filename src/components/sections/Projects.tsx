@@ -39,9 +39,7 @@ const ProjectCard = styled.div`
 
 const ProjectImage = styled(Image)`
   width: 100%;
-  height: 200px;
-  border-radius: ${theme.borderRadius.md};
-  overflow: hidden;
+  height: 120px;
   margin-bottom: ${theme.spacing.md};
 `;
 
@@ -115,8 +113,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               <ProjectImage
                 src={project.image}
                 alt={project.title}
-                width="100%"
-                height="200px"
+                isLogo={true}
               />
               <ProjectTitle>{project.title}</ProjectTitle>
               <ProjectDescription>{project.description}</ProjectDescription>

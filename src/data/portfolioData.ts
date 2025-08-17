@@ -185,7 +185,7 @@ export const portfolioData: PortfolioData = {
       role: "Collaborated with more than 20 vendors and led the technical implementation.",
       impact: "Won #1 for UNCDF 2019 for innovation in supply chain transparency and efficiency.",
       technologies: ["Blockchain", "Supply Chain", "AgriTech", "International Shipping"],
-      image: "/images/projects/artswap.png"
+      image: "https://rumsan.nyc3.cdn.digitaloceanspaces.com/esatya/agriclear-updated-logo-white.png"
     }
   ],
   testimonials: [
