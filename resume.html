@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anup Shrestha - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: white;
+            font-size: 11pt;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.75in;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #0071e3;
+            padding-bottom: 1rem;
+        }
+        
+        .name {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #0071e3;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .title {
+            font-size: 14pt;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info {
+            font-size: 10pt;
+            color: #666;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .section {
+            margin-bottom: 1.25rem;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: 600;
+            color: #0071e3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.25rem;
+        }
+        
+        .experience-item {
+            margin-bottom: 1rem;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .company {
+            font-size: 11pt;
+            font-weight: 500;
+            color: #0071e3;
+        }
+        
+        .date-location {
+            font-size: 10pt;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievement {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.25rem;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+        
+        .achievement::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #0071e3;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: #0071e3;
+        }
+        
+        .metrics {
+            font-weight: 500;
+            color: #2d5aa0;
+        }
+        
+        .education-item {
+            margin-bottom: 0.75rem;
+        }
+        
+        .degree {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .institution {
+            font-size: 10pt;
+            color: #0071e3;
+            font-weight: 500;
+        }
+        
+        .education-details {
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-category-title {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .skill-list {
+            font-size: 9pt;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .certifications {
+            margin-top: 0.5rem;
+        }
+        
+        .certification-item {
+            margin-bottom: 0.25rem;
+            font-size: 9pt;
+        }
+        
+        .certification-name {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .certification-issuer {
+            color: #0071e3;
+            font-style: italic;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0.5in;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">ANUP SHRESTHA</div>
+        <div class="title">Innovation Strategist & Product Leader</div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📍</span>
+                <span>Toronto, Ontario</span>
+            </div>
+            <div class="contact-item">
+                <span>📧</span>
+                <span>anupsth23@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <span>🔗</span>
+                <span>linkedin.com/in/anupsth23</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Product Manager</div>
+                    <div class="company">TwinsAI</div>
+                </div>
+                <div class="date-location">Jan 2025 - Present | USA (Remote)</div>
+            </div>
+            <ul class="achievements">
+                <li class="achievement">Led <span class="highlight">cross-functional teams</span> across engineering, design, sales, and marketing to deliver secure, scalable SaaS solutions in <span class="metrics">3+ global markets</span></li>
+                <li class="achievement">Developed and maintained <span class="highlight">product roadmap</span>, aligning cross-functional teams and ensuring timely delivery of high-impact features</li>
+                <li class="achievement">Drove <span class="highlight">onboarding and flow optimizations</span>, leveraging analytics to increase user conversion by <span class="metrics">22%</span></li>
+                <li class="achievement">Owned <span class="highlight">end-to-end product strategy</span> and execution for AI-driven platforms, resulting in measurable improvements in product adoption and customer retention</li>
+                <li class="achievement">Led <span class="highlight">sprint planning and Agile ceremonies</span>, driving continuous improvement and fostering a culture of accountability and collaboration</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Head of Product Operations (Fractional)</div>
+                    <div class="company">Pandaflow</div>
+                </div>
+                <div class="date-location">Jan 2024 - Present | USA (Remote)</div>
+            </div>
+            <ul class="achievements">
+                <li class="achievement">Coordinated <span class="highlight">timelines and resource allocation</span> for automation projects, improving project delivery speed by <span class="metrics">15%</span> across <span class="metrics">3+ internal teams</span></li>
+                <li class="achievement">Monitored <span class="highlight">project milestones and deliverables</span>, reducing project risks by <span class="metrics">20%</span> through proactive tracking and stakeholder communication</li>
+                <li class="achievement">Drafted <span class="metrics">10+ key project documents</span>, improving stakeholder communication efficiency by <span class="metrics">30%</span></li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Advanced AI Data Trainer</div>
+                    <div class="company">Invisible Technologies</div>
+                </div>
+                <div class="date-location">Jan 2023 - Apr 2023 | USA</div>
+            </div>
+            <ul class="achievements">
+                <li class="achievement">Trained <span class="highlight">advanced AI language models</span>, providing detailed conversational examples and feedback, resulting in measurable improvements in model accuracy and safety</li>
+                <li class="achievement">Labeled and categorized <span class="highlight">AI-generated outputs</span>, developing processes that improved data quality by <span class="metrics">18%</span> and annotation efficiency by <span class="metrics">12%</span></li>
+                <li class="achievement">Performed <span class="highlight">quality assurance</span> on annotated datasets, contributing to a <span class="metrics">15% reduction</span> in data errors for production AI systems</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Project Manager</div>
+                    <div class="company">Rumsan Associates</div>
+                </div>
+                <div class="date-location">December 2021 - March 2023 | Nepal</div>
+            </div>
+            <ul class="achievements">
+                <li class="achievement">Delivered <span class="metrics">10+ SaaS and blockchain projects</span>, including retail crypto trading platforms and NFT marketplaces, ensuring <span class="metrics">100% regulatory compliance</span></li>
+                <li class="achievement">Designed and launched a <span class="highlight">blockchain-based financial product</span>, securing <span class="metrics">4+ government partnerships</span> and onboarding <span class="metrics">15,000+ users</span> within the first year</li>
+                <li class="achievement">Built and managed <span class="highlight">0→1 product features</span>, making iterative improvements based on real-world customer feedback and market validation</li>
+                <li class="achievement">Led <span class="highlight">cross-functional efforts</span> to scale MVP adoption, balancing short-term pivots with long-term strategic goals</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        
+        <div class="education-item">
+            <div class="degree">Post Graduate Certificate in Advanced Project Management – Information Technology</div>
+            <div class="institution">Lambton College</div>
+            <div class="education-details">Toronto, Canada | 2023 - 2024</div>
+        </div>
+        
+        <div class="education-item">
+            <div class="degree">Bachelor of Information & Management</div>
+            <div class="institution">Thames International College, Tribhuvan University</div>
+            <div class="education-details">Nepal | 2014 - 2018</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Skills & Competencies</div>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-category-title">Product Management</div>
+                <div class="skill-list">Product Strategy • Roadmapping • MVP Development • Agile/Scrum • User Research • A/B Testing</div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Technical Skills</div>
+                <div class="skill-list">Python • SQL • Data Analytics • AI/ML • Blockchain • AWS • API Design</div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Leadership</div>
+                <div class="skill-list">Cross-functional Leadership • Stakeholder Management • Team Building • Strategic Planning</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Certifications</div>
+        
+        <div class="certifications">
+            <div class="certification-item">
+                <span class="certification-name">Data Analytics Essentials</span> • <span class="certification-issuer">Cisco (2024)</span>
+            </div>
+            <div class="certification-item">
+                <span class="certification-name">Google Data Analytics Professional Certificate</span> • <span class="certification-issuer">Google (2023)</span>
+            </div>
+            <div class="certification-item">
+                <span class="certification-name">Google Project Management Professional Certificate</span> • <span class="certification-issuer">Google (2022)</span>
+            </div>
+            <div class="certification-item">
+                <span class="certification-name">Programming for Everybody (Python)</span> • <span class="certification-issuer">University of Michigan (2020)</span>
+            </div>
+            <div class="certification-item">
+                <span class="certification-name">Investment Management Specialization</span> • <span class="certification-issuer">University of Geneva (2020)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Awards & Recognition</div>
+        
+        <div class="certifications">
+            <div class="certification-item">
+                <span class="certification-name">Microsoft Twilio Hackathon Participant</span> • <span class="certification-issuer">2024</span>
+            </div>
+            <div class="certification-item">
+                <span class="certification-name">UNCDF 2019 Winner</span> • <span class="certification-issuer">Product Innovation & MVP Delivery</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
