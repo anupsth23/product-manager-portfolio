@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Certification } from '../../types';
 import Section from '../ui/Section';
 import Container from '../ui/Container';
@@ -10,13 +10,31 @@ interface CertificationsProps {
   certifications: Certification[];
 }
 
+// Animations
+const slideInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const pulse = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+`;
+
 const CertificationsWrapper = styled(Section)`
-  background: linear-gradient(180deg, #050505 0%, ${theme.colors.backgroundAlt} 100%);
+  background: linear-gradient(135deg, rgba(20, 25, 35, 0.95) 0%, rgba(30, 35, 45, 0.95) 100%);
+  padding: ${theme.spacing.xxl} 0;
   position: relative;
   overflow: hidden;
-  padding: ${theme.spacing.xxl} 0;
   
-  /* Abstract grid pattern */
+  /* Subtle grid pattern */
   &::before {
     content: '';
     position: absolute;
@@ -25,10 +43,10 @@ const CertificationsWrapper = styled(Section)`
     right: 0;
     bottom: 0;
     background-image: 
-      linear-gradient(rgba(0, 113, 227, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 113, 227, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.2;
+      linear-gradient(rgba(74, 157, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 157, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.3;
     z-index: 0;
   }
 `;
@@ -36,100 +54,82 @@ const CertificationsWrapper = styled(Section)`
 const CertificationsContainer = styled(Container)`
   position: relative;
   z-index: 1;
-  max-width: 1400px;
-  padding-left: 24px;
-  padding-right: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 const CertificationsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: ${theme.spacing.xl};
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: ${theme.spacing.lg};
   margin-top: ${theme.spacing.xl};
   
   @media (max-width: ${theme.breakpoints.md}) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: ${theme.breakpoints.sm}) {
     grid-template-columns: 1fr;
   }
 `;
 
 const CertificationCard = styled.div`
-  background: ${theme.colors.glass};
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
   border-radius: ${theme.borderRadius.xl};
-  padding: 2.5rem 2rem;
-  backdrop-filter: blur(14px);
-  border: 1.5px solid ${theme.colors.glassBorder};
-  transition: box-shadow 0.2s, transform 0.2s;
+  padding: ${theme.spacing.xl};
+  border: 1px solid rgba(74, 157, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-
+  animation: ${slideInUp} 0.8s ease-out;
+  
   &:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
-    border-color: ${theme.colors.primary};
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    border-color: rgba(74, 157, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
   }
-
-  &::after {
+  
+  &::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     height: 3px;
-    background: linear-gradient(90deg, ${theme.colors.primary}, ${theme.colors.secondary});
-    opacity: 0.5;
-    transform: translateY(3px);
-    transition: all ${theme.transitions.normal};
+    background: linear-gradient(90deg, ${theme.colors.primary}, ${theme.colors.aiAccent});
+    opacity: 0.8;
   }
 `;
 
 const CertificationHeader = styled.div`
   display: flex;
-  align-items: center;
-  margin-bottom: ${theme.spacing.md};
+  align-items: flex-start;
+  gap: ${theme.spacing.lg};
+  margin-bottom: ${theme.spacing.lg};
 `;
 
-const CertificationLogo = styled.div<{image?: string}>`
-  width: 50px;
-  height: 50px;
-  border-radius: ${theme.borderRadius.md};
-  background: ${theme.colors.background};
+const IssuerBadge = styled.div<{ issuer: string }>`
+  width: 60px;
+  height: 60px;
+  border-radius: ${theme.borderRadius.lg};
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: ${theme.spacing.md};
-  overflow: hidden;
-  
-  ${props => props.image ? `
-    background-image: url(${props.image});
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  ` : ''}
-`;
-
-// Fallback component for when logo image is not available
-const LogoFallback = styled.div<{issuer: string}>`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  flex-shrink: 0;
   background: ${props => {
-    // Generate a consistent color based on issuer name
+    // Generate consistent colors based on issuer
     const hash = props.issuer.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
     const hue = hash % 360;
-    return `hsla(${hue}, 70%, 30%, 0.8)`;
+    return `linear-gradient(135deg, hsla(${hue}, 70%, 50%, 0.9), hsla(${hue}, 70%, 30%, 0.9))`;
   }};
-  font-weight: bold;
-  color: white;
-  font-size: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
   
-  &::after {
-    content: '${props => props.issuer.substring(0, 1)}';
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -138,14 +138,17 @@ const CertificationInfo = styled.div`
 `;
 
 const CertificationTitle = styled.h3`
-  margin: 0;
-  font-size: ${theme.typography.sizes.title3};
+  font-size: 1.3rem;
   color: ${theme.colors.text};
+  margin: 0 0 ${theme.spacing.sm} 0;
+  font-weight: 600;
+  line-height: 1.3;
 `;
 
 const CertificationIssuer = styled.div`
-  font-size: ${theme.typography.sizes.caption};
+  font-size: 1rem;
   color: ${theme.colors.textSecondary};
+  font-weight: 500;
   display: flex;
   align-items: center;
   
@@ -153,73 +156,126 @@ const CertificationIssuer = styled.div`
     content: 'by';
     margin-right: ${theme.spacing.xs};
     opacity: 0.6;
+    font-weight: normal;
   }
 `;
 
-const CertificationDates = styled.div`
-  font-family: 'Fira Code', monospace;
-  font-size: ${theme.typography.sizes.caption};
-  color: ${theme.colors.primary};
-  margin: ${theme.spacing.sm} 0;
+const CertificationMeta = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing.md};
+  margin: ${theme.spacing.md} 0;
+  flex-wrap: wrap;
+`;
+
+const DateBadge = styled.div`
+  background: rgba(74, 157, 255, 0.1);
+  border: 1px solid rgba(74, 157, 255, 0.2);
   padding: ${theme.spacing.xs} ${theme.spacing.sm};
-  background: rgba(0, 113, 227, 0.1);
-  border-radius: ${theme.borderRadius.sm};
-  display: inline-block;
+  border-radius: ${theme.borderRadius.md};
+  font-size: 0.9rem;
+  color: ${theme.colors.primary};
+  font-weight: 500;
+  font-family: 'Fira Code', monospace;
+`;
+
+const StatusBadge = styled.div<{ isValid: boolean }>`
+  background: ${props => props.isValid ? 'rgba(88, 237, 210, 0.1)' : 'rgba(255, 177, 85, 0.1)'};
+  border: 1px solid ${props => props.isValid ? 'rgba(88, 237, 210, 0.3)' : 'rgba(255, 177, 85, 0.3)'};
+  padding: ${theme.spacing.xs} ${theme.spacing.sm};
+  border-radius: ${theme.borderRadius.md};
+  font-size: 0.85rem;
+  color: ${props => props.isValid ? '#58EDD2' : '#FFB155'};
+  font-weight: 500;
+  
+  &::before {
+    content: '${props => props.isValid ? '✓' : '⏰'}';
+    margin-right: ${theme.spacing.xs};
+  }
 `;
 
 const CertificationDescription = styled.p`
-  margin: ${theme.spacing.md} 0;
-  font-size: ${theme.typography.sizes.body};
+  font-size: 1rem;
   color: ${theme.colors.textSecondary};
   line-height: 1.6;
+  margin: ${theme.spacing.md} 0;
 `;
 
 const CertificationSkills = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: ${theme.spacing.xs};
-  margin-top: ${theme.spacing.md};
+  gap: ${theme.spacing.sm};
+  margin: ${theme.spacing.lg} 0;
 `;
 
 const SkillTag = styled.span`
   background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(74, 157, 255, 0.1);
   padding: ${theme.spacing.xs} ${theme.spacing.sm};
   border-radius: ${theme.borderRadius.sm};
-  font-size: ${theme.typography.sizes.caption};
+  font-size: 0.85rem;
   color: ${theme.colors.textSecondary};
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(74, 157, 255, 0.1);
+    border-color: rgba(74, 157, 255, 0.3);
+    color: ${theme.colors.text};
+    transform: translateY(-1px);
+  }
   
   &::before {
     content: '#';
-    color: ${theme.colors.secondary};
-    margin-right: 2px;
+    color: ${theme.colors.primary};
+    margin-right: 4px;
   }
 `;
 
 const CredentialLink = styled.a`
-  font-size: ${theme.typography.sizes.caption};
-  color: ${theme.colors.primary};
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
+  gap: ${theme.spacing.sm};
+  background: linear-gradient(135deg, rgba(74, 157, 255, 0.1), rgba(74, 157, 255, 0.2));
+  border: 1px solid rgba(74, 157, 255, 0.3);
+  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  border-radius: ${theme.borderRadius.md};
+  color: ${theme.colors.primary};
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
   margin-top: ${theme.spacing.md};
   
   &:hover {
-    text-decoration: underline;
+    background: linear-gradient(135deg, rgba(74, 157, 255, 0.2), rgba(74, 157, 255, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 157, 255, 0.2);
   }
   
-  &::before {
+  &::after {
     content: '→';
-    margin-right: ${theme.spacing.xs};
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover::after {
+    transform: translateX(3px);
   }
 `;
 
 const Certifications: React.FC<CertificationsProps> = ({ certifications }) => {
   if (!certifications || certifications.length === 0) return null;
   
+  const isCertificationValid = (certification: Certification) => {
+    if (!certification.validUntil) return true;
+    const validUntil = new Date(certification.validUntil);
+    return validUntil > new Date();
+  };
+  
   return (
     <CertificationsWrapper id="certifications">
       <CertificationsContainer>
-        <Heading level={2} size="headline" align="center" marginBottom="large">
+        <Heading level={2} size="title1" gradient withAccent align="center">
           Professional Certifications
         </Heading>
         
@@ -227,18 +283,25 @@ const Certifications: React.FC<CertificationsProps> = ({ certifications }) => {
           {certifications.map((certification, index) => (
             <CertificationCard key={index}>
               <CertificationHeader>
-                <CertificationLogo image={certification.image}>
-                  {!certification.image && <LogoFallback issuer={certification.issuer} />}
-                </CertificationLogo>
+                <IssuerBadge issuer={certification.issuer}>
+                  {certification.issuer.charAt(0)}
+                </IssuerBadge>
                 <CertificationInfo>
                   <CertificationTitle>{certification.name}</CertificationTitle>
                   <CertificationIssuer>{certification.issuer}</CertificationIssuer>
                 </CertificationInfo>
               </CertificationHeader>
               
-              <CertificationDates>
-                {certification.date} {certification.validUntil ? `- ${certification.validUntil}` : ''}
-              </CertificationDates>
+              <CertificationMeta>
+                <DateBadge>
+                  {certification.date}
+                </DateBadge>
+                {certification.validUntil && (
+                  <StatusBadge isValid={isCertificationValid(certification)}>
+                    {isCertificationValid(certification) ? 'Valid' : 'Expired'}
+                  </StatusBadge>
+                )}
+              </CertificationMeta>
               
               {certification.description && (
                 <CertificationDescription>
@@ -260,7 +323,8 @@ const Certifications: React.FC<CertificationsProps> = ({ certifications }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Verify Credential {certification.credentialId ? `#${certification.credentialId}` : ''}
+                  Verify Credential
+                  {certification.credentialId && ` #${certification.credentialId}`}
                 </CredentialLink>
               )}
             </CertificationCard>

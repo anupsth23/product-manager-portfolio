@@ -217,48 +217,42 @@ export const portfolioData: PortfolioData = {
       issuer: "Cisco",
       date: "2024",
       description: "Comprehensive training in data analytics fundamentals and practical applications.",
-      skills: ["Data Analysis", "Data Visualization", "Business Intelligence"],
-      image: "/images/certifications/cisco.svg"
+      skills: ["Data Analysis", "Data Visualization", "Business Intelligence"]
     },
     {
       name: "Google Data Analytics Professional Certificate",
       issuer: "Google",
       date: "2023",
       description: "Comprehensive training in data analytics including data preparation, analysis, visualization, and interpretation for business decision-making.",
-      skills: ["Data Analysis", "R Programming", "SQL", "Tableau", "Data Visualization"],
-      image: "/images/certifications/google.svg"
+      skills: ["Data Analysis", "R Programming", "SQL", "Tableau", "Data Visualization"]
     },
     {
       name: "Google Project Management Professional Certificate",
       issuer: "Google",
       date: "2022",
       description: "Professional certification in project management methodologies and tools.",
-      skills: ["Project Management", "Agile", "Scrum", "Risk Management"],
-      image: "/images/certifications/google.svg"
+      skills: ["Project Management", "Agile", "Scrum", "Risk Management"]
     },
     {
       name: "Programming for Everybody (Python)",
       issuer: "University of Michigan",
       date: "2020",
       description: "Comprehensive introduction to Python programming and computational thinking.",
-      skills: ["Python", "Programming Fundamentals", "Problem Solving"],
-      image: "/images/certifications/michigan.svg"
+      skills: ["Python", "Programming Fundamentals", "Problem Solving"]
     },
     {
       name: "Investment Management Specialization",
       issuer: "University of Geneva",
       date: "2020",
       description: "Specialized training in investment strategies and portfolio management.",
-      skills: ["Investment Analysis", "Portfolio Management", "Financial Markets"],
-      image: "/images/certifications/geneva.svg"
+      skills: ["Investment Analysis", "Portfolio Management", "Financial Markets"]
     },
     {
       name: "Introduction to Psychology",
       issuer: "Yale University",
       date: "2020",
       description: "Foundational course in psychological principles and human behavior.",
-      skills: ["Psychology", "Human Behavior", "Research Methods"],
-      image: "/images/certifications/yale.svg"
+      skills: ["Psychology", "Human Behavior", "Research Methods"]
     }
   ],
   education: [
