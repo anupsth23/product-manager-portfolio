@@ -44,7 +44,7 @@ export const portfolioData: PortfolioData = {
         "Led sprint planning and Agile ceremonies, driving continuous improvement and fostering a culture of accountability and collaboration"
       ],
       technologies: ["Jira", "GitHub", "Google Suite", "Agile/Scrum", "SaaS"],
-      image: "/images/experience/twinsailogo.svg"
+      image: "https://cdn.prod.website-files.com/6674a0a7dd2acefb8a875990/66fd6e551bafb4e2fa1fb236_twinsai-horizontal-logo-130x42-wht.png"
     },
     {
       title: "Head of Product Operations (Fractional)",
@@ -169,7 +169,7 @@ export const portfolioData: PortfolioData = {
       role: "Led product strategy, development and go-to-market execution",
       impact: "Increased customer conversion by 400% and reduced sales cycle by 35% for enterprise clients",
       technologies: ["Artificial Intelligence", "Natural Language Processing", "Sales Automation", "CRM Integration"],
-      image: "/images/projects/twinsai.svg"
+      image: "https://cdn.prod.website-files.com/6674a0a7dd2acefb8a875990/66fd6e551bafb4e2fa1fb236_twinsai-horizontal-logo-130x42-wht.png"
     },
     {
       title: "Rahat",
@@ -194,7 +194,7 @@ export const portfolioData: PortfolioData = {
       author: "Sarah Chen",
       role: "CTO",
       company: "TwinsAI",
-      image: "/images/testimonials/testimonial1.svg"
+      image: "https://cdn.prod.website-files.com/6674a0a7dd2acefb8a875990/66fd6e551bafb4e2fa1fb236_twinsai-horizontal-logo-130x42-wht.png"
     },
     {
       quote: "Working with Anup transformed how we approach product development. His data-driven methodology and customer-first mindset created a paradigm shift in our organization.",
