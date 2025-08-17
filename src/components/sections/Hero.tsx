@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { PersonalInfo } from '../../types';
 import Section from '../ui/Section';
 import Container from '../ui/Container';
 import Heading from '../ui/Heading';
 import Button from '../ui/Button';
+import ResumeModal from '../ResumeModal';
 import { theme } from '../../styles/theme';
 
 interface HeroProps {
@@ -176,6 +177,8 @@ const ScrollIndicator = styled.div`
 `;
 
 const Hero: React.FC<HeroProps> = ({ personalInfo }: HeroProps) => {
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+  
   // Get initials from name
   const getInitials = (name: string) => {
     return name
@@ -230,16 +233,9 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }: HeroProps) => {
           <Button 
             size="large" 
             variant="outline" 
-            onClick={() => {
-              const link = document.createElement('a');
-              link.href = '/resume.html';
-              link.target = '_blank';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
+            onClick={() => setIsResumeModalOpen(true)}
           >
-            Download Resume
+            View Resume
           </Button>
         </HeroActions>
       </HeroContent>
@@ -250,6 +246,11 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }: HeroProps) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </ScrollIndicator>
+      
+      <ResumeModal 
+        isOpen={isResumeModalOpen}
+        onClose={() => setIsResumeModalOpen(false)}
+      />
     </HeroWrapper>
   );
 };
